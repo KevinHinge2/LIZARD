@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <rect width="1600" height="1000" fill="#EDE8E1"/>
+  <rect x="340" y="180" width="920" height="640" rx="40" fill="#D8D0C5"/>
+  <text x="800" y="470" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="72" fill="#1D1D1F" font-weight="700">Tom Placeholder</text>
+  <text x="800" y="550" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="30" fill="#6E6E73">Swap this with your Tom image, GIF, or launch video.</text>
+</svg>
