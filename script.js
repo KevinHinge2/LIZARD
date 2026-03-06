@@ -77,6 +77,14 @@ function handleMilestone() {
   triggerConfetti(reached.burst);
 }
 
+function playAudio() {
+  if (!lizardAudio) return;
+  lizardAudio.currentTime = 0;
+  lizardAudio.play().catch(() => {
+    showConfirmation("Press confirmed. Audio playback is blocked until user interaction is allowed.");
+  });
+}
+
 function animatePressFeedback() {
   pressButton.classList.add("is-pressed");
   heroMedia.classList.add("bump");
