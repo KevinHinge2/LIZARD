@@ -77,14 +77,6 @@ function handleMilestone() {
   triggerConfetti(reached.burst);
 }
 
-function playAudio() {
-  if (!lizardAudio) return;
-  lizardAudio.currentTime = 0;
-  lizardAudio.play().catch(() => {
-    showConfirmation("Press confirmed. (Add your lizard sound file to enable audio.)");
-  });
-}
-
 function animatePressFeedback() {
   pressButton.classList.add("is-pressed");
   heroMedia.classList.add("bump");
@@ -100,7 +92,17 @@ function handlePress() {
   state.localPresses += 1;
   globalCountEl.textContent = formatNumber(state.globalCount);
 
-  playAudio();
+  if (lizardAudio) {
+    lizardAudio.pause();
+    lizardAudio.currentTime = 0;
+    lizardAudio.play().catch((error) => {
+      console.error("Unable to play lizard audio.", error);
+      showConfirmation("Button press confirmed. Audio playback was blocked.");
+    });
+  } else {
+    console.error("#lizardAudio element is missing from the DOM.");
+  }
+
   animatePressFeedback();
   showConfirmation("Button press confirmed.");
   handleMilestone();
@@ -148,6 +150,15 @@ function setupRevealAnimations() {
 }
 
 function init() {
+  if (!pressButton) {
+    console.error("#pressButton was not found. Audio trigger cannot be attached.");
+    return;
+  }
+
+  if (!lizardAudio) {
+    console.error("#lizardAudio was not found. Button presses will be silent.");
+  }
+
   globalCountEl.textContent = formatNumber(state.globalCount);
   pressButton.addEventListener("click", handlePress);
   askForm.addEventListener("submit", handleAskTom);
