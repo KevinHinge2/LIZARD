@@ -189,7 +189,7 @@ body {
   transition: transform 360ms cubic-bezier(0.2, 0.85, 0.3, 1);
 }
 
-.hero-media img {
+.hero-media video {
   display: block;
   width: 100%;
   height: min(62vh, 480px);
