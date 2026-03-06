@@ -81,7 +81,7 @@ function playAudio() {
   if (!lizardAudio) return;
   lizardAudio.currentTime = 0;
   lizardAudio.play().catch(() => {
-    showConfirmation("Press confirmed. (Add your lizard sound file to enable audio.)");
+    showConfirmation("Press confirmed. Audio playback is blocked until user interaction is allowed.");
   });
 }
 
