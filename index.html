@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tom — Press the Button</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell" id="pageShell">
+      <header class="top-nav" id="topNav">
+        <a class="brand" href="#hero" aria-label="Tom home">Tom</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#features">Features</a>
+          <a href="#audio">Lizard Audio</a>
+          <a href="#ask">Ask Tom</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero section" id="hero">
+          <p class="eyebrow reveal">Introducing Tom</p>
+          <h1 class="headline reveal">Tom presses the button.</h1>
+          <p class="subhead reveal">
+            With remarkable speed, precision, and no known strategic objective.
+          </p>
+
+          <div class="counter-card reveal" aria-live="polite">
+            <p class="counter-label">Tom has pressed the button</p>
+            <p class="counter-value" id="globalCount">8,492,221</p>
+          </div>
+
+          <div class="hero-actions reveal">
+            <button class="press-button" id="pressButton" type="button">
+              Press the Button
+            </button>
+            <p class="press-confirmation" id="pressConfirmation" role="status"></p>
+          </div>
+
+          <figure class="hero-media reveal" id="heroMedia">
+            <!-- Replace this src with your Tom image/video/GIF asset. -->
+            <!-- Example replacement: assets/tom-launch.mp4, assets/tom.gif, or assets/tom-hero.jpg -->
+            <img src="assets/tom-placeholder.svg" alt="Tom the lizard, poised for button excellence." />
+            <figcaption>Built around Tom.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section features" id="features">
+          <div class="section-head reveal">
+            <p class="eyebrow">Features</p>
+            <h2>Engineered for one thing. And one thing only.</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <h3>Precision Press System</h3>
+              <p>
+                A deeply integrated, zero-distraction architecture designed to deliver class-leading
+                button engagement at the exact moment Tom decides it is time.
+              </p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>Lizard-First Architecture</h3>
+              <p>
+                Every layer of the experience is calibrated around reptilian intent. Not trends.
+                Not noise. Just pure, focused, premium lizard throughput.
+              </p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>Advanced Responsiveness</h3>
+              <p>
+                Instant visual, tactile, and emotional feedback. Incredibly advanced. Incredibly
+                unnecessary.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section audio" id="audio">
+          <div class="section-head reveal">
+            <p class="eyebrow">Lizard Audio</p>
+            <h2>The most powerful lizard audio engine we’ve ever made.</h2>
+          </div>
+          <div class="audio-panel reveal">
+            <p>
+              Tom Audio Engine synchronizes each press with a signature acoustic event tuned for
+              clarity, confidence, and immediate reptile recognition.
+            </p>
+            <p>
+              <!-- Replace this source with your real lizard sound file path. -->
+              <!-- Supported examples: assets/lizard-sound.mp3 or assets/lizard-sound.mp4 -->
+              Calibrated playback. Low-latency output. Maximum lizard.
+            </p>
+          </div>
+          <audio id="lizardAudio" preload="auto">
+            <source src="assets/lizard-sound.mp3" type="audio/mpeg" />
+          </audio>
+        </section>
+
+        <section class="section ask" id="ask">
+          <div class="section-head reveal">
+            <p class="eyebrow">Ask Tom</p>
+            <h2>Private, on-device lizard intelligence.</h2>
+          </div>
+          <form class="ask-form reveal" id="askForm">
+            <label for="questionInput">Your question</label>
+            <input
+              id="questionInput"
+              name="question"
+              type="text"
+              maxlength="160"
+              required
+              placeholder="Should I text them?"
+            />
+            <p class="hint">Try: “Should I go for the run?” “Should I buy it?”</p>
+            <button type="submit" class="ask-button">Ask Tom</button>
+          </form>
+          <article class="answer-card reveal" id="answerCard" aria-live="polite">
+            <p class="answer-kicker">Tom Intelligence Response</p>
+            <p class="answer-text" id="answerText">Awaiting your question.</p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer section">
+        <p>Lizard responses may vary.</p>
+        <p>Button press counts are approximate.</p>
+        <p>
+          Tom Intelligence is not a substitute for legal, financial, or emotional advice.
+        </p>
+      </footer>
+
+      <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
